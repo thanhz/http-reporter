@@ -53,12 +53,10 @@ class HttpRequesterTest {
                 .setResponseCode(200));
 
         HttpHeader httpHeader = httpRequester.sendRequest(request);
-        System.out.println(httpHeader.toString());
 
         assertTrue(httpHeader.getUri().contains("/test"));
         assertEquals(200 ,httpHeader.getStatus());
         assertEquals("0" ,httpHeader.getContentLength());
         assertEquals("26/09/2021" ,httpHeader.getDate());
-
     }
 }
