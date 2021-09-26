@@ -28,7 +28,7 @@ public class Runner {
                     if (httpRequester.verifyURL(url)) {
                         urls.add(httpRequester.createRequest(url));
                     } else {
-                        System.out.println("INVALID URL");
+                        System.err.println("INVALID URL");
                     }
                     break;
                 case 3:

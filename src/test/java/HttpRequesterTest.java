@@ -1,6 +1,5 @@
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -55,8 +54,8 @@ class HttpRequesterTest {
         HttpHeader httpHeader = httpRequester.sendRequest(request);
 
         assertTrue(httpHeader.getUri().contains("/test"));
-        assertEquals(200 ,httpHeader.getStatus());
-        assertEquals("0" ,httpHeader.getContentLength());
-        assertEquals("26/09/2021" ,httpHeader.getDate());
+        assertEquals(200, httpHeader.getStatus());
+        assertEquals("0", httpHeader.getContentLength());
+        assertEquals("26/09/2021", httpHeader.getDate());
     }
 }
