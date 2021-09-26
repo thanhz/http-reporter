@@ -1,8 +1,16 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HttpRequesterTest {
+
+    static HttpRequester httpRequester;
+
+    @BeforeAll
+    public static void init(){
+        httpRequester = new HttpRequester();
+    }
 
     @Test
     public void verifyURLShouldReturnTrueWhenGivenValidURL(){
@@ -18,7 +26,6 @@ class HttpRequesterTest {
 
     @Test
     public void verifyURLShouldReturnFalseWhenGivenInvalidURL(){
-        HttpRequester httpRequester = new HttpRequester();
         boolean test1 = httpRequester.verifyURL("");
         boolean test2 = httpRequester.verifyURL("bbc.com");
         boolean test3 = httpRequester.verifyURL("htp://bbc.com");
