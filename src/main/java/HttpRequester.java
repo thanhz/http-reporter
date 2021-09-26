@@ -1,3 +1,6 @@
+import java.io.IOException;
+
+import java.net.http.HttpRequest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,5 +16,14 @@ public class HttpRequester {
 
         Matcher matcher = URL_PATTERN.matcher(url);
         return matcher.matches();
+    }
+
+    public HttpRequest createRequest(String url) {
+        return HttpRequest.newBuilder()
+                .build();
+    }
+
+    public HttpHeader sendRequest(HttpRequest request) throws IOException, InterruptedException {
+        return new HttpHeader("/",404,"0","1/1/1");
     }
 }
